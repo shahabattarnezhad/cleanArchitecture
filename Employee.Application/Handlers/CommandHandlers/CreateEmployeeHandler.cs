@@ -2,13 +2,14 @@
 using Employee.Application.Mappers;
 using Employee.Application.Responses;
 using Employee.Core.Repositories;
+using MediatR;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Employee.Application.Handlers.CommandHandlers
 {
-    public class CreateEmployeeHandler
+    public class CreateEmployeeHandler : IRequestHandler<CreateEmployeeCommand, EmployeeResponse>
     {
         private readonly IEmployeeRepository _repository;
 
